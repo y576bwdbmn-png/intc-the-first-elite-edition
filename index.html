@@ -1,99 +1,727 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>INTC — THE FIRST ELITE EDITION</title>
+
+    <style>
+
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        #hero {
+            min-height: 100vh;
+            background: #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+
+        /* HEADER */
+
+        .hero-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            padding: 28px 32px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            z-index: 10;
+        }
+
+
+        /* INTC LOGO */
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+
+        /* MENU */
+
+        .menu-button {
+            background: none;
+            border: none;
+
+            color: #fff;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* HERO CONTENT */
+
+        .hero-content {
+            min-height: 100vh;
+
+            display: flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+
+            padding: 90px 24px 50px;
+
+            text-align: center;
+        }
+
+
+        /* HERO IMAGE */
+
+        .hero-image {
+            width: 100%;
+            max-width: 700px;
+
+            height: 58vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 20px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        /* HERO TEXT */
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+
+        /* THE FIRST */
+
+        .hero-eyebrow {
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 7px;
+        }
+
+
+        /* ELITE EDITION */
+
+        .hero-text h1 {
+            font-size: clamp(42px, 9vw, 86px);
+
+            line-height: 0.9;
+
+            font-weight: 900;
+
+            letter-spacing: -3px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* SUBTITLE */
+
+        .hero-subtitle {
+            margin-top: 18px;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 2.5px;
+
+            color: #bdbdbd;
+        }
+
+
+        /* PRICE */
+
+        .hero-price {
+            margin-top: 20px;
+
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+
+        /* CTA */
+
+        .hero-cta {
+            display: inline-block;
+
+            margin-top: 22px;
+
+            padding: 15px 38px;
+
+            background: #fff;
+            color: #000;
+
+            text-decoration: none;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            transition: 0.2s ease;
+        }
+
+        .hero-cta:hover {
+            background: #18d9d2;
+            color: #000;
+        }
+
+
+        /* =========================
+           OTHER SECTIONS
+           TEMPORARY STRUCTURE
+        ========================== */
+
+        section:not(#hero) {
+            min-height: 60vh;
+
+            padding: 100px 24px;
+
+            background: #fff;
+            color: #000;
+        }
+
+        section:not(#hero) h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            padding: 60px 24px;
+
+            background: #000;
+            color: #fff;
+
+            text-align: center;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            .hero-header {
+                padding: 22px 20px;
+            }
+
+            .logo {
+                font-size: 24px;
+            }
+
+            .menu-button {
+                font-size: 24px;
+            }
+
+            .hero-content {
+                padding: 80px 18px 40px;
+            }
+
+            .hero-image {
+                height: 50vh;
+            }
+
+            .hero-text h1 {
+                font-size: clamp(40px, 12vw, 60px);
+                letter-spacing: -2px;
+            }
+
+            .hero-subtitle {
+                font-size: 9px;
+                letter-spacing: 2px;
+            }
+
+            .hero-price {
+                font-size: 23px;
+            }
+
+            .hero-cta {
+                padding: 14px 32px;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-    <!-- 01 — HERO -->
+
+    <!-- =========================
+         01 — HERO
+    ========================== -->
+
     <section id="hero">
 
-    <header class="hero-header">
-        <div class="logo">
+        <header class="hero-header">
+
+            <div class="logo">
+                INTC
+            </div>
+
+            <button
+                class="menu-button"
+                aria-label="Open menu">
+                ☰
+            </button>
+
+        </header>
+
+
+        <div class="hero-content">
+
+            <div class="hero-image">
+
+                <img
+                    src="assets/hero-model.jpg"
+                    alt="INTC The First Elite Edition">
+
+            </div>
+
+
+            <div class="hero-text">
+
+                <p class="hero-eyebrow">
+                    THE FIRST
+                </p>
+
+                <h1>
+                    ELITE EDITION
+                </h1>
+
+                <p class="hero-subtitle">
+                    LUXURY ELITE FOOTBALL JERSEY
+                </p>
+
+                <div class="hero-price">
+                    ฿459
+                </div>
+
+                <a
+                    href="#pre-order"
+                    class="hero-cta">
+                    PRE-ORDER
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         02 — THE EDITION
+    ========================== -->
+
+    <section id="edition">
+
+        <p>
+            THE EDITION
+        </p>
+
+        <h2>
+            THE FIRST ELITE EDITION
+        </h2>
+
+        <p>
+            The first football jersey created exclusively for INTC.
+        </p>
+
+        <p>
+            FIRST OF ITS KIND
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         03 — THE JERSEY
+    ========================== -->
+
+    <section id="jersey">
+
+        <p>
+            THE JERSEY
+        </p>
+
+        <h2>
+            THE JERSEY
+        </h2>
+
+        <div>
+            FRONT VIEW
+        </div>
+
+        <div>
+            BACK VIEW
+        </div>
+
+        <div>
+            DETAILS
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         04 — SIZE & FIT
+    ========================== -->
+
+    <section id="size-fit">
+
+        <p>
+            SIZE & FIT
+        </p>
+
+        <h2>
+            SIZE & FIT
+        </h2>
+
+        <div id="size-chart">
+            SIZE CHART
+        </div>
+
+        <p>
+            Measurements may vary by approximately ±1 inch.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         05 — PRE-ORDER
+    ========================== -->
+
+    <section id="pre-order">
+
+        <p>
+            PRE-ORDER
+        </p>
+
+        <h2>
+            SECURE YOUR EDITION
+        </h2>
+
+        <div>
+            ฿459 / JERSEY
+        </div>
+
+        <p>
+            SHORT / LONG SLEEVE — SAME PRICE
+        </p>
+
+        <p>
+            NAME & NUMBER — INCLUDED
+        </p>
+
+        <p>
+            3XL–5XL — +฿20
+        </p>
+
+        <a href="#order-form">
+            ORDER NOW
+        </a>
+
+    </section>
+
+
+
+    <!-- =========================
+         06 — ORDER FORM
+    ========================== -->
+
+    <section id="order-form">
+
+        <p>
+            ORDER
+        </p>
+
+        <h2>
+            PLACE YOUR ORDER
+        </h2>
+
+        <form id="orderForm">
+
+            <div>
+                <label for="name">
+                    FULL NAME
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required>
+            </div>
+
+
+            <div>
+                <label for="phone">
+                    PHONE
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required>
+            </div>
+
+
+            <div>
+                <label for="contact">
+                    LINE ID / MAIN CONTACT
+                </label>
+
+                <input
+                    type="text"
+                    id="contact"
+                    name="contact"
+                    required>
+            </div>
+
+
+            <div>
+                <label for="sleeve">
+                    SLEEVE
+                </label>
+
+                <select
+                    id="sleeve"
+                    name="sleeve"
+                    required>
+
+                    <option value="">
+                        SELECT
+                    </option>
+
+                    <option value="Short Sleeve">
+                        SHORT SLEEVE
+                    </option>
+
+                    <option value="Long Sleeve">
+                        LONG SLEEVE
+                    </option>
+
+                </select>
+            </div>
+
+
+            <div>
+                <label for="size">
+                    SIZE
+                </label>
+
+                <select
+                    id="size"
+                    name="size"
+                    required>
+
+                    <option value="">
+                        SELECT
+                    </option>
+
+                    <option>JS</option>
+                    <option>JM</option>
+                    <option>JL</option>
+                    <option>SS</option>
+                    <option>S</option>
+                    <option>M</option>
+                    <option>L</option>
+                    <option>XL</option>
+                    <option>2XL</option>
+                    <option>3XL</option>
+                    <option>4XL</option>
+                    <option>5XL</option>
+
+                </select>
+            </div>
+
+
+            <div>
+                <label for="customization">
+                    NAME & NUMBER
+                </label>
+
+                <select
+                    id="customization"
+                    name="customization"
+                    required>
+
+                    <option value="">
+                        SELECT
+                    </option>
+
+                    <option value="None">
+                        NO CUSTOMIZATION
+                    </option>
+
+                    <option value="Custom">
+                        ADD NAME & NUMBER
+                    </option>
+
+                </select>
+            </div>
+
+
+            <div>
+                <label for="quantity">
+                    QUANTITY
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    min="1"
+                    value="1"
+                    required>
+            </div>
+
+
+            <!-- ORDER SUMMARY -->
+
+            <div id="order-summary">
+
+                <h3>
+                    ORDER SUMMARY
+                </h3>
+
+                <p>
+                    ITEMS:
+                    <span id="summary-items">
+                        —
+                    </span>
+                </p>
+
+                <p>
+                    TOTAL:
+                    <span id="summary-total">
+                        ฿0
+                    </span>
+                </p>
+
+            </div>
+
+
+            <!-- PAYMENT -->
+
+            <div id="payment">
+
+                <h3>
+                    PAYMENT
+                </h3>
+
+                <div>
+                    PROMPTPAY QR
+                </div>
+
+                <label for="slip">
+                    UPLOAD PAYMENT SLIP
+                </label>
+
+                <input
+                    type="file"
+                    id="slip"
+                    name="slip"
+                    accept="image/*"
+                    required>
+
+                <div id="slip-preview">
+                </div>
+
+            </div>
+
+
+            <button type="submit">
+                CONFIRM ORDER
+            </button>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- =========================
+         07 — FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div>
             INTC
         </div>
 
-        <button class="menu-button" aria-label="Open menu">
-            ☰
-        </button>
-    </header>
-
-    <div class="hero-content">
-
-        <div class="hero-image">
-            <img
-                src="assets/hero-model.jpg"
-                alt="INTC The First Elite Edition"
-            >
+        <div>
+            INTERNATIONAL COLLEGE
         </div>
 
-        <div class="hero-text">
-
-            <p class="hero-eyebrow">
-                THE FIRST
-            </p>
-
-            <h1>
-                ELITE EDITION
-            </h1>
-
-            <p class="hero-subtitle">
-                LUXURY ELITE FOOTBALL JERSEY
-            </p>
-
-            <div class="hero-price">
-                ฿459
-            </div>
-
-            <a href="#pre-order" class="hero-cta">
-                PRE-ORDER
-            </a>
-
+        <div>
+            THE FIRST ELITE EDITION
         </div>
 
-    </div>
-
-</section>
-
-
-    <!-- 02 — THE EDITION -->
-    <section id="edition">
-        THE EDITION
-    </section>
-
-
-    <!-- 03 — THE JERSEY -->
-    <section id="jersey">
-        THE JERSEY
-    </section>
-
-
-    <!-- 04 — SIZE & FIT -->
-    <section id="size-fit">
-        SIZE & FIT
-    </section>
-
-
-    <!-- 05 — PRE-ORDER -->
-    <section id="pre-order">
-        PRE-ORDER
-    </section>
-
-
-    <!-- 06 — ORDER FORM -->
-    <section id="order-form">
-        ORDER FORM
-    </section>
-
-
-    <!-- 07 — FOOTER -->
-    <footer>
-        INTC
     </footer>
 
+
 </body>
+
 </html>
