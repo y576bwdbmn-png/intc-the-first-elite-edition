@@ -1910,22 +1910,117 @@ playerNumber.addEventListener(
 ===================================================== */
 
 const orderForm =
-    document.getElementById("orderForm");
+  document.getElementById("orderForm");
 
+const GOOGLE_SCRIPT_URL =
+  "https://script.google.com/macros/s/AKfycbxOw678X-uBNaCz2IvXGUZ_kIiwndQe-qcjRX-CTTSZdwoSD55mcKS7VtF39Bw2oodNJA/exec";
 
 orderForm.addEventListener(
-    "submit",
-    function(event) {
+  "submit",
+  async function (event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
-        alert(
-            "ORDER FORM READY.\n\n" +
-            "Google Sheets connection will be added next."
-        );
+    const submitButton =
+      orderForm.querySelector(
+        'button[type="submit"]'
+      );
+
+    submitButton.disabled = true;
+    submitButton.textContent = "PROCESSING...";
+
+    try {
+
+      const formData =
+        new FormData(orderForm);
+
+      const data =
+        new URLSearchParams();
+
+      formData.forEach(
+        function (value, key) {
+
+          if (value instanceof File) {
+
+            if (value.size > 0) {
+
+              const reader =
+                new FileReader();
+
+              reader.onload = function () {
+
+                data.set(
+                  key,
+                  reader.result
+                );
+              };
+
+              reader.readAsDataURL(value);
+
+            }
+
+          } else {
+
+            data.append(
+              key,
+              value
+            );
+
+          }
+
+        }
+      );
+
+      // Give FileReader time to finish
+      await new Promise(
+        function (resolve) {
+          setTimeout(resolve, 1000);
+        }
+      );
+
+      await fetch(
+        GOOGLE_SCRIPT_URL,
+        {
+          method: "POST",
+          mode: "no-cors",
+          body: data
+        }
+      );
+
+      alert(
+        "ORDER RECEIVED\n\n" +
+        "Thank you for your pre-order.\n" +
+        "Your order has been submitted successfully."
+      );
+
+      orderForm.reset();
+
+      if (
+        typeof updateSummary === "function"
+      ) {
+        updateSummary();
+      }
+
+    } catch (error) {
+
+      console.error(error);
+
+      alert(
+        "Something went wrong.\n\n" +
+        "Please try again."
+      );
+
+    } finally {
+
+      submitButton.disabled = false;
+      submitButton.textContent = "CONFIRM ORDER";
 
     }
+
+  }
 );
+
+updateSummary();
 
 
 updateSummary();
