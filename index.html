@@ -278,38 +278,160 @@ select {
     margin-bottom: 55px;
 }
 
-.jersey-grid {
-    display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+/* =====================================================
+   JERSEY CAROUSEL
+===================================================== */
 
-    gap: 20px;
+.jersey-set {
+    margin-bottom: 85px;
 }
 
-.jersey-card {
-    min-height: 520px;
+.jersey-set:last-child {
+    margin-bottom: 0;
+}
+
+.jersey-set-header {
+    margin-bottom: 24px;
+}
+
+.jersey-set-number {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+    color: #18d9d2;
+}
+
+.jersey-set-title {
+    font-size: 28px;
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+}
+
+.jersey-set-subtitle {
+    margin-top: 7px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+/* Horizontal scroll container */
+
+.jersey-carousel {
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    padding-bottom: 12px;
+
+    scroll-snap-type: x mandatory;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+.jersey-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Individual slide */
+
+.jersey-slide {
+    flex: 0 0 82%;
+
+    min-height: 560px;
 
     background: #111;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    scroll-snap-align: start;
+
+    overflow: hidden;
+
+    position: relative;
 }
 
-.image-placeholder {
+.jersey-slide img {
     width: 100%;
-    min-height: 520px;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Placeholder */
+
+.jersey-placeholder {
+    width: 100%;
+    height: 560px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
+    text-align: center;
+
     color: #555;
 
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 11px;
+    font-weight: 800;
 
     letter-spacing: 3px;
+
+    padding: 30px;
+}
+
+
+/* Slide counter */
+
+.jersey-counter {
+    margin-top: 17px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jersey-counter-text {
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #666;
+}
+
+.jersey-swipe-hint {
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #444;
 }
 
 
@@ -396,39 +518,6 @@ select {
     font-weight: 900;
 
     letter-spacing: -5px;
-}
-
-.preorder-details {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 15px;
-
-    margin: 40px 0;
-}
-
-.preorder-detail {
-    padding: 28px 15px;
-
-    border: 1px solid #333;
-}
-
-.preorder-detail strong {
-    display: block;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 9px;
-}
-
-.preorder-detail span {
-    font-size: 13px;
-
-    color: #aaa;
 }
 
 .preorder-button {
@@ -875,19 +964,30 @@ footer {
     }
 
 
-    .jersey-grid {
-        grid-template-columns: 1fr;
+    /* JERSEY CAROUSEL MOBILE */
+
+    .jersey-set {
+        margin-bottom: 65px;
     }
 
-    .jersey-card,
-    .image-placeholder {
+    .jersey-set-title {
+        font-size: 24px;
+    }
+
+    .jersey-slide {
+        flex: 0 0 88%;
         min-height: 430px;
     }
 
-
-    .preorder-details {
-        grid-template-columns: 1fr;
+    .jersey-placeholder {
+        height: 430px;
+        min-height: 430px;
     }
+
+    .jersey-swipe-hint {
+        display: none;
+    }
+
 
     .preorder-price {
         font-size: 80px;
@@ -1118,22 +1218,184 @@ footer {
         </div>
 
 
-        <div class="jersey-grid">
+        <!-- =============================================
+             SET 01 — THE EDITORIAL
+        ============================================== -->
 
-            <div class="jersey-card">
+        <div class="jersey-set">
 
-                <div class="image-placeholder">
-                    FRONT IMAGE
+            <div class="jersey-set-header">
+
+                <span class="jersey-set-number">
+                    01
+                </span>
+
+                <h3 class="jersey-set-title">
+                    THE EDITORIAL
+                </h3>
+
+                <p class="jersey-set-subtitle">
+                    MODEL / LIFESTYLE
+                </p>
+
+            </div>
+
+
+            <div class="jersey-carousel">
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        MODEL IMAGE 01
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        MODEL IMAGE 02
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        MODEL IMAGE 03
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        MODEL IMAGE 04
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        MODEL IMAGE 05
+                    </div>
+
                 </div>
 
             </div>
 
 
-            <div class="jersey-card">
+            <div class="jersey-counter">
 
-                <div class="image-placeholder">
-                    BACK IMAGE
+                <span class="jersey-counter-text">
+                    01 — 05
+                </span>
+
+                <span class="jersey-swipe-hint">
+                    SWIPE TO EXPLORE →
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =============================================
+             SET 02 — THE DETAILS
+        ============================================== -->
+
+        <div class="jersey-set">
+
+            <div class="jersey-set-header">
+
+                <span class="jersey-set-number">
+                    02
+                </span>
+
+                <h3 class="jersey-set-title">
+                    THE DETAILS
+                </h3>
+
+                <p class="jersey-set-subtitle">
+                    CRAFT / DETAILS
+                </p>
+
+            </div>
+
+
+            <div class="jersey-carousel">
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        DETAIL IMAGE 01
+                    </div>
+
                 </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        DETAIL IMAGE 02
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        DETAIL IMAGE 03
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        DETAIL IMAGE 04
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        DETAIL IMAGE 05
+                    </div>
+
+                </div>
+
+
+                <div class="jersey-slide">
+
+                    <div class="jersey-placeholder">
+                        DETAIL IMAGE 06
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="jersey-counter">
+
+                <span class="jersey-counter-text">
+                    01 — 06
+                </span>
+
+                <span class="jersey-swipe-hint">
+                    SWIPE TO EXPLORE →
+                </span>
 
             </div>
 
@@ -1234,49 +1496,6 @@ footer {
 
             <div class="preorder-price">
                 ฿459
-            </div>
-
-
-            <div class="preorder-details">
-
-                <div class="preorder-detail">
-
-                    <strong>
-                        SHORT / LONG
-                    </strong>
-
-                    <span>
-                        SAME PRICE
-                    </span>
-
-                </div>
-
-
-                <div class="preorder-detail">
-
-                    <strong>
-                        NAME & NUMBER
-                    </strong>
-
-                    <span>
-                        INCLUDED
-                    </span>
-
-                </div>
-
-
-                <div class="preorder-detail">
-
-                    <strong>
-                        3XL — 5XL
-                    </strong>
-
-                    <span>
-                        +฿20
-                    </span>
-
-                </div>
-
             </div>
 
 
@@ -1906,121 +2125,28 @@ playerNumber.addEventListener(
 
 
 /* =====================================================
-   FORM
+   FORM — TEMPORARY FRONTEND ONLY
+   GOOGLE SHEETS / APPS SCRIPT REMOVED FOR NOW
 ===================================================== */
 
 const orderForm =
-  document.getElementById("orderForm");
+    document.getElementById("orderForm");
 
-const GOOGLE_SCRIPT_URL =
-  https://script.google.com/macros/s/AKfycbx1RVcO4iqTxHfxPE-Qzgk9zG_Oe-JHUAWlD4ZgM4EwQ9crJ73XH5mFxL9vFfpxgQFShA/exec
 
 orderForm.addEventListener(
-  "submit",
-  async function (event) {
+    "submit",
+    function(event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    const submitButton =
-      orderForm.querySelector(
-        'button[type="submit"]'
-      );
-
-    submitButton.disabled = true;
-    submitButton.textContent = "PROCESSING...";
-
-    try {
-
-      const formData =
-        new FormData(orderForm);
-
-      const data =
-        new URLSearchParams();
-
-      formData.forEach(
-        function (value, key) {
-
-          if (value instanceof File) {
-
-            if (value.size > 0) {
-
-              const reader =
-                new FileReader();
-
-              reader.onload = function () {
-
-                data.set(
-                  key,
-                  reader.result
-                );
-              };
-
-              reader.readAsDataURL(value);
-
-            }
-
-          } else {
-
-            data.append(
-              key,
-              value
-            );
-
-          }
-
-        }
-      );
-
-      // Give FileReader time to finish
-      await new Promise(
-        function (resolve) {
-          setTimeout(resolve, 1000);
-        }
-      );
-
-      await fetch(
-        GOOGLE_SCRIPT_URL,
-        {
-          method: "POST",
-          mode: "no-cors",
-          body: data
-        }
-      );
-
-      alert(
-        "ORDER RECEIVED\n\n" +
-        "Thank you for your pre-order.\n" +
-        "Your order has been submitted successfully."
-      );
-
-      orderForm.reset();
-
-      if (
-        typeof updateSummary === "function"
-      ) {
-        updateSummary();
-      }
-
-    } catch (error) {
-
-      console.error(error);
-
-      alert(
-        "Something went wrong.\n\n" +
-        "Please try again."
-      );
-
-    } finally {
-
-      submitButton.disabled = false;
-      submitButton.textContent = "CONFIRM ORDER";
+        alert(
+            "ORDER FORM READY\n\n" +
+            "Your order details have been prepared.\n\n" +
+            "Online submission will be connected later."
+        );
 
     }
-
-  }
 );
-
-updateSummary();
 
 
 updateSummary();
