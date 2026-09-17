@@ -3,590 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>INTC — THE FIRST ELITE EDITION</title>
-
-  <meta
-    name="description"
-    content="INTC — THE FIRST ELITE EDITION. Luxury Elite Football Jersey."
-  >
 
   <style>
     * {
       box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100%;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
       background: #f5f5f2;
       color: #111;
-      line-height: 1.4;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    button,
-    input,
-    select {
-      font: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 76px;
-      z-index: 1000;
-
+    .hero {
+      min-height: 100vh;
+      padding: 40px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      text-align: center;
+    }
 
-      padding: 0 5vw;
-
-      background: rgba(245, 245, 242, 0.94);
-      backdrop-filter: blur(12px);
-
-      border-bottom: 1px solid #ddd;
+    .content {
+      max-width: 900px;
     }
 
     .logo {
       font-size: 28px;
       font-weight: 900;
-      letter-spacing: -1.5px;
-    }
-
-    .menu-button {
-      width: 44px;
-      height: 44px;
-
-      border: 1px solid #111;
-      background: transparent;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .menu-button span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: #111;
-    }
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-      padding: 120px 5vw 50px;
-
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-
-      background: #f5f5f2;
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 70vh;
-      min-height: 500px;
-
-      background: #deded9;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      overflow: hidden;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .image-placeholder {
-      text-align: center;
-      color: #777;
-      font-size: 12px;
-      letter-spacing: 2px;
-      padding: 30px;
-    }
-
-    .hero-copy {
-      padding: 20px 0;
+      letter-spacing: -1px;
+      margin-bottom: 50px;
     }
 
     .eyebrow {
       font-size: 12px;
       font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 22px;
+      letter-spacing: 4px;
+      margin-bottom: 25px;
     }
 
-    .hero h1 {
-      font-size: clamp(58px, 8vw, 125px);
-      line-height: 0.86;
+    h1 {
+      margin: 0;
+      font-size: clamp(55px, 10vw, 120px);
+      line-height: 0.85;
       letter-spacing: -6px;
-      font-weight: 900;
-      margin-bottom: 35px;
     }
 
-    .hero-subtitle {
+    p {
+      margin-top: 35px;
       font-size: 14px;
       letter-spacing: 2px;
       font-weight: 700;
-      margin-bottom: 28px;
     }
 
     .price {
+      margin-top: 25px;
       font-size: 24px;
       font-weight: 700;
-      margin-bottom: 30px;
     }
 
-    .price span {
-      font-size: 12px;
-      letter-spacing: 1px;
-      font-weight: 400;
-      margin-left: 8px;
-    }
-
-    .primary-button {
+    .button {
       display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-height: 56px;
-      padding: 0 30px;
-
+      margin-top: 30px;
+      padding: 18px 30px;
       background: #111;
       color: white;
-
-      border: 1px solid #111;
-
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-
-      transition: 0.2s ease;
-    }
-
-    .primary-button:hover {
-      background: transparent;
-      color: #111;
-    }
-
-    /* =========================
-       GENERAL SECTION
-    ========================= */
-
-    section {
-      padding: 110px 5vw;
-    }
-
-    .section-label {
+      text-decoration: none;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    .section-title {
-      font-size: clamp(40px, 6vw, 82px);
-      line-height: 0.95;
-      letter-spacing: -3px;
-      font-weight: 900;
-    }
-
-    /* =========================
-       THE EDITION
-    ========================= */
-
-    .edition {
-      background: #111;
-      color: white;
-
-      min-height: 70vh;
-
-      display: flex;
-      align-items: center;
-    }
-
-    .edition-content {
-      max-width: 900px;
-    }
-
-    .edition .section-label {
-      color: #65d6d0;
-    }
-
-    .edition-copy {
-      margin-top: 45px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-    }
-
-    .edition-word {
-      font-size: clamp(42px, 6vw, 80px);
-      font-weight: 900;
-      line-height: 0.9;
-      letter-spacing: -3px;
-    }
-
-    .edition-description {
-      font-size: 15px;
-      max-width: 430px;
-      color: #ccc;
-    }
-
-    /* =========================
-       GALLERY
-    ========================= */
-
-    .jersey-section {
-      background: #f5f5f2;
-      overflow: hidden;
-    }
-
-    .gallery-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 30px;
-      margin-bottom: 45px;
-    }
-
-    .gallery-header p {
-      max-width: 350px;
-      font-size: 13px;
-      color: #555;
-    }
-
-    .gallery-set {
-      margin-bottom: 85px;
-    }
-
-    .gallery-set:last-child {
-      margin-bottom: 0;
-    }
-
-    .gallery-set-title {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 18px;
-    }
-
-    .gallery-set-title h3 {
-      font-size: 18px;
-      letter-spacing: 1px;
-    }
-
-    .gallery-set-title span {
-      font-size: 10px;
       letter-spacing: 2px;
-      color: #777;
     }
+  </style>
+</head>
 
-    .gallery-wrapper {
-      position: relative;
-    }
+<body>
 
-    .gallery {
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
+  <section class="hero">
 
-      scrollbar-width: none;
-    }
+    <div class="content">
 
-    .gallery::-webkit-scrollbar {
-      display: none;
-    }
+      <div class="logo">
+        INTC
+      </div>
 
-    .gallery-card {
-      flex: 0 0 72vw;
-      max-width: 560px;
-      height: 650px;
+      <div class="eyebrow">
+        INTC / 001
+      </div>
 
-      background: #ddd;
+      <h1>
+        THE FIRST<br>
+        ELITE EDITION
+      </h1>
 
-      overflow: hidden;
-    }
+      <p>
+        LUXURY ELITE FOOTBALL JERSEY
+      </p>
 
-    .gallery-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
+      <div class="price">
+        ฿459 / JERSEY
+      </div>
 
-    .gallery-placeholder {
-      width: 100%;
-      height: 100%;
+      <a
+        class="button"
+        href="#"
+      >
+        PRE-ORDER
+      </a>
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    </div>
 
-      font-size: 11px;
-      letter-spacing: 2px;
-      color: #777;
-      text-align: center;
-      padding: 20px;
-    }
+  </section>
 
-    .gallery-controls {
-      display: flex;
-      gap: 8px;
-      margin-top: 15px;
-    }
-
-    .arrow {
-      width: 48px;
-      height: 48px;
-
-      border: 1px solid #111;
-      background: transparent;
-
-      font-size: 18px;
-    }
-
-    .arrow:hover {
-      background: #111;
-      color: white;
-    }
-
-    /* =========================
-       SIZE
-    ========================= */
-
-    .size-section {
-      background: white;
-    }
-
-    .size-table-wrapper {
-      overflow-x: auto;
-      margin-top: 50px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      min-width: 650px;
-    }
-
-    th,
-    td {
-      padding: 17px 15px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-      font-size: 13px;
-    }
-
-    th {
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .size-note {
-      margin-top: 15px;
-      font-size: 11px;
-      color: #777;
-    }
-
-    /* =========================
-       CONFIGURATOR
-    ========================= */
-
-    .builder {
-      background: #111;
-      color: white;
-    }
-
-    .builder-layout {
-      margin-top: 55px;
-
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 70px;
-    }
-
-    .builder-intro {
-      position: sticky;
-      top: 120px;
-      height: fit-content;
-    }
-
-    .builder-intro p {
-      margin-top: 25px;
-      color: #aaa;
-      max-width: 400px;
-      font-size: 14px;
-    }
-
-    .builder-form {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
-
-    .field label {
-      font-size: 10px;
-      letter-spacing: 2px;
-      font-weight: 700;
-    }
-
-    .field select,
-    .field input {
-      width: 100%;
-      height: 52px;
-
-      border: 1px solid #555;
-      background: #1b1b1b;
-      color: white;
-
-      padding: 0 15px;
-
-      outline: none;
-    }
-
-    .field select:focus,
-    .field input:focus {
-      border-color: #65d6d0;
-    }
-
-    .radio-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .radio-option {
-      position: relative;
-    }
-
-    .radio-option input {
-      position: absolute;
-      opacity: 0;
-    }
-
-    .radio-option label {
-      height: 52px;
-
-      border: 1px solid #555;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      cursor: pointer;
-
-      font-size: 11px;
-      letter-spacing: 1px;
-    }
-
-    .radio-option input:checked + label {
-      border-color: #65d6d0;
-      color: #65d6d0;
-    }
-
-    .name-fields {
-      display: none;
-      grid-template-columns: 1fr 160px;
-      gap: 10px;
-    }
-
-    .name-fields.show {
-      display: grid;
-    }
-
-    .builder-price {
-      padding-top: 10px;
-      border-top: 1px solid #444;
-
-      display: flex;
-      justify-content: space-between;
-
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .builder-price small {
-      font-size: 10px;
-      color: #888;
-      font-weight: 400;
-    }
-
-    .builder .primary-button {
-      width: 100%;
-      background: white;
-      color: #111;
-      border-color: white;
-    }
-
-    .builder .primary-button:hover {
-      background: transparent;
-      color: white;
-    }
-
-    /* =========================
-       CART
-    ========================= */
-
-    .cart-section {
-      background: #e9e9e5;
-    }
-
-    .cart-list {
-      margin-top: 45px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .cart-empty {
-      padding: 50px 20px;
-      border: 1px solid #ccc;
-      text-align: center;
-      color: #777;
-      font-size: 13px;
-    }
-
-    .cart-item {
-      background: white;
-      border: 1px solid #ddd;
-
-      padding:
+</body>
+</html>
