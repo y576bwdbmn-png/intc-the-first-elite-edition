@@ -1,2158 +1,684 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>INTC — THE FIRST ELITE EDITION</title>
-
-<style>
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #000;
-    color: #fff;
-    overflow-x: hidden;
-}
-
-button,
-input,
-select {
-    font: inherit;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-.hero-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    padding: 28px 34px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    z-index: 50;
-}
-
-.logo {
-    font-size: 30px;
-    font-weight: 900;
-    letter-spacing: -2px;
-}
-
-.menu-button {
-    background: none;
-    border: none;
-    color: #fff;
-
-    font-size: 30px;
-    line-height: 1;
-
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-#hero {
-    min-height: 100vh;
-    background: #000;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-content {
-    min-height: 100vh;
-
-    display: flex;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    padding: 90px 24px 60px;
-}
-
-.hero-image {
-    width: 100%;
-    max-width: 720px;
-    height: 55vh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-bottom: 20px;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-    display: block;
-}
-
-.hero-text {
-    position: relative;
-    z-index: 2;
-}
-
-.hero-eyebrow {
-    font-size: 14px;
-    font-weight: 800;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 9px;
-}
-
-.hero-text h1 {
-    font-size: clamp(46px, 9vw, 88px);
-
-    line-height: 0.88;
-
-    font-weight: 900;
-
-    letter-spacing: -4px;
-
-    text-transform: uppercase;
-}
-
-.hero-subtitle {
-    margin-top: 21px;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    color: #bdbdbd;
-}
-
-.hero-price {
-    margin-top: 20px;
-
-    font-size: 27px;
-    font-weight: 800;
-}
-
-.hero-cta {
-    display: inline-block;
-
-    margin-top: 23px;
-
-    padding: 16px 42px;
-
-    background: #fff;
-    color: #000;
-
-    text-decoration: none;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    transition: .25s ease;
-}
-
-.hero-cta:hover {
-    background: #18d9d2;
-}
-
-
-/* =====================================================
-   GENERAL
-===================================================== */
-
-.section-inner {
-    width: min(1100px, 88%);
-    margin: auto;
-}
-
-.section-label {
-    font-size: 13px;
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    margin-bottom: 22px;
-}
-
-.section-title {
-    font-size: clamp(42px, 7vw, 76px);
-
-    line-height: .92;
-
-    font-weight: 900;
-
-    letter-spacing: -3px;
-}
-
-
-/* =====================================================
-   THE EDITION
-===================================================== */
-
-#edition {
-    min-height: 65vh;
-
-    background: #f5f5f2;
-    color: #000;
-
-    display: flex;
-    align-items: center;
-
-    padding: 110px 0;
-}
-
-.edition-content {
-    max-width: 760px;
-}
-
-.edition-line {
-    width: 45px;
-    height: 3px;
-
-    background: #18d9d2;
-
-    margin: 32px 0;
-}
-
-.edition-description {
-    max-width: 680px;
-
-    font-size: 19px;
-    line-height: 1.65;
-
-    color: #333;
-}
-
-.edition-statement {
-    margin-top: 48px;
-
-    font-size: 13px;
-    font-weight: 900;
-
-    letter-spacing: 3px;
-}
-
-
-/* =====================================================
-   THE JERSEY
-===================================================== */
-
-#jersey {
-    background: #080808;
-    padding: 110px 0;
-}
-
-.jersey-header {
-    margin-bottom: 55px;
-}
-
-
-/* =====================================================
-   JERSEY CAROUSEL
-===================================================== */
-
-.jersey-set {
-    margin-bottom: 85px;
-}
-
-.jersey-set:last-child {
-    margin-bottom: 0;
-}
-
-.jersey-set-header {
-    margin-bottom: 24px;
-}
-
-.jersey-set-number {
-    display: block;
-
-    margin-bottom: 8px;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    color: #18d9d2;
-}
-
-.jersey-set-title {
-    font-size: 28px;
-    font-weight: 900;
-
-    letter-spacing: -1px;
-
-    text-transform: uppercase;
-}
-
-.jersey-set-subtitle {
-    margin-top: 7px;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 2px;
-
-    color: #777;
-}
-
-
-/* Horizontal scroll container */
-
-.jersey-carousel {
-    display: flex;
-
-    gap: 16px;
-
-    overflow-x: auto;
-
-    padding-bottom: 12px;
-
-    scroll-snap-type: x mandatory;
-
-    -webkit-overflow-scrolling: touch;
-
-    scrollbar-width: none;
-}
-
-.jersey-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* Individual slide */
-
-.jersey-slide {
-    flex: 0 0 82%;
-
-    min-height: 560px;
-
-    background: #111;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    scroll-snap-align: start;
-
-    overflow: hidden;
-
-    position: relative;
-}
-
-.jersey-slide img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* Placeholder */
-
-.jersey-placeholder {
-    width: 100%;
-    height: 560px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    color: #555;
-
-    font-size: 11px;
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-    padding: 30px;
-}
-
-
-/* Slide counter */
-
-.jersey-counter {
-    margin-top: 17px;
-
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-}
-
-.jersey-counter-text {
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    color: #666;
-}
-
-.jersey-swipe-hint {
-    font-size: 10px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    color: #444;
-}
-
-
-/* =====================================================
-   SIZE & FIT
-===================================================== */
-
-#size-fit {
-    background: #f5f5f2;
-    color: #000;
-
-    padding: 110px 0;
-}
-
-.size-header {
-    margin-bottom: 45px;
-}
-
-.size-table-wrap {
-    overflow-x: auto;
-}
-
-.size-table {
-    width: 100%;
-    min-width: 600px;
-
-    border-collapse: collapse;
-}
-
-.size-table th,
-.size-table td {
-    padding: 17px 14px;
-
-    text-align: left;
-
-    border-bottom: 1px solid #d3d3d3;
-}
-
-.size-table th {
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-.size-table td {
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.size-note {
-    margin-top: 20px;
-
-    font-size: 13px;
-
-    color: #666;
-}
-
-
-/* =====================================================
-   PRE-ORDER
-===================================================== */
-
-#pre-order {
-    background: #000;
-
-    padding: 110px 0;
-
-    text-align: center;
-}
-
-.preorder-box {
-    max-width: 800px;
-    margin: auto;
-}
-
-.preorder-price {
-    margin: 35px 0;
-
-    font-size: clamp(65px, 12vw, 125px);
-
-    line-height: .9;
-
-    font-weight: 900;
-
-    letter-spacing: -5px;
-}
-
-.preorder-button {
-    display: inline-block;
-
-    padding: 17px 48px;
-
-    background: #fff;
-    color: #000;
-
-    text-decoration: none;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    transition: .25s ease;
-}
-
-.preorder-button:hover {
-    background: #18d9d2;
-}
-
-
-/* =====================================================
-   ORDER FORM
-===================================================== */
-
-#order-form {
-    background: #f5f5f2;
-    color: #000;
-
-    padding: 110px 0;
-}
-
-.order-container {
-    max-width: 850px;
-    margin: auto;
-}
-
-.order-header {
-    margin-bottom: 55px;
-}
-
-.order-form-grid {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-
-    gap: 10px;
-}
-
-.form-group.full {
-    grid-column: 1 / -1;
-}
-
-.form-group label {
-    font-size: 13px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-.form-group input,
-.form-group select {
-    width: 100%;
-
-    min-height: 52px;
-
-    padding: 13px 15px;
-
-    border: 1px solid #c9c9c9;
-
-    background: #fff;
-    color: #000;
-
-    outline: none;
-
-    font-size: 15px;
-    font-weight: 500;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #000;
-}
-
-
-/* =====================================================
-   NAME & NUMBER
-===================================================== */
-
-.custom-fields {
-    grid-column: 1 / -1;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    gap: 25px;
-
-    padding: 25px;
-
-    background: #e8e8e5;
-
-    border-left: 4px solid #18d9d2;
-}
-
-
-/* =====================================================
-   ORDER SUMMARY
-===================================================== */
-
-.order-summary {
-    margin-top: 45px;
-
-    padding: 32px;
-
-    background: #000;
-    color: #fff;
-}
-
-.order-summary h3 {
-    margin-bottom: 22px;
-
-    font-size: 15px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-.summary-row {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 20px;
-
-    padding: 12px 0;
-
-    border-bottom: 1px solid #292929;
-
-    font-size: 14px;
-}
-
-.summary-row span:last-child {
-    text-align: right;
-}
-
-.summary-total {
-    display: flex;
-
-    justify-content: space-between;
-
-    margin-top: 25px;
-
-    font-size: 23px;
-    font-weight: 900;
-}
-
-
-/* =====================================================
-   PAYMENT
-===================================================== */
-
-.payment-box {
-    margin-top: 30px;
-
-    padding: 32px;
-
-    background: #fff;
-
-    border: 1px solid #d1d1d1;
-}
-
-.payment-box h3 {
-    margin-bottom: 25px;
-
-    font-size: 15px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-}
-
-.qr-placeholder {
-    width: 220px;
-    height: 220px;
-
-    margin: 0 auto 28px;
-
-    border: 1px dashed #aaa;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    color: #777;
-
-    font-size: 11px;
-    font-weight: 700;
-
-    letter-spacing: 1px;
-}
-
-.slip-upload {
-    margin-top: 20px;
-}
-
-.confirm-button {
-    width: 100%;
-
-    margin-top: 28px;
-
-    padding: 19px;
-
-    border: none;
-
-    background: #000;
-    color: #fff;
-
-    font-size: 12px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: .25s ease;
-}
-
-.confirm-button:hover {
-    background: #18d9d2;
-    color: #000;
-}
-
-
-/* =====================================================
-   MENU
-===================================================== */
-
-.menu-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 100;
-
-    background: #000;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition: .3s ease;
-}
-
-.menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-.menu-close {
-    position: absolute;
-
-    top: 24px;
-    right: 32px;
-
-    background: none;
-    border: none;
-
-    color: #fff;
-
-    font-size: 46px;
-    font-weight: 200;
-
-    line-height: 1;
-
-    cursor: pointer;
-}
-
-.menu-nav {
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 30px;
-}
-
-.menu-nav a {
-    color: #fff;
-
-    text-decoration: none;
-
-    font-size: 28px;
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    transition: .2s ease;
-}
-
-.menu-nav a:hover {
-    color: #18d9d2;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    background: #000;
-
-    padding: 60px 30px;
-
-    text-align: center;
-}
-
-.footer-logo {
-    font-size: 30px;
-    font-weight: 900;
-
-    letter-spacing: -2px;
-}
-
-.footer-college {
-    margin-top: 12px;
-
-    font-size: 12px;
-    font-weight: 700;
-
-    letter-spacing: 3px;
-
-    color: #aaa;
-}
-
-.footer-edition {
-    margin-top: 22px;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: #555;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 700px) {
-
-    .hero-header {
-        padding: 22px 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>INTC — THE FIRST ELITE EDITION</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #05070a;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button,
+    input,
+    select {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 76px;
+
+      display: flex;
+      align-items: center;
+
+      background: rgba(5, 7, 10, 0.88);
+      backdrop-filter: blur(15px);
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      z-index: 1000;
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .logo {
-        font-size: 27px;
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 0.2em;
     }
 
     .menu-button {
-        font-size: 28px;
+      width: 44px;
+      height: 44px;
+
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+
+      background: transparent;
+      color: white;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hamburger {
+      width: 18px;
+      height: 1px;
+      background: white;
+      position: relative;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+      content: "";
+      position: absolute;
+      left: 0;
+
+      width: 18px;
+      height: 1px;
+
+      background: white;
+    }
+
+    .hamburger::before {
+      top: -6px;
+    }
+
+    .hamburger::after {
+      top: 6px;
+    }
+
+    /* =========================
+       MENU
+    ========================= */
+
+    .menu {
+      position: fixed;
+      top: 76px;
+      right: 0;
+
+      width: min(350px, 100%);
+
+      background: #090d13;
+
+      border-left: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      padding: 20px;
+
+      transform: translateY(-120%);
+      transition: 0.3s ease;
+
+      z-index: 999;
+    }
+
+    .menu.active {
+      transform: translateY(0);
+    }
+
+    .menu a {
+      display: block;
+
+      padding: 18px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+
+      font-size: 12px;
+      font-weight: 800;
+
+      letter-spacing: 0.15em;
+    }
+
+    /* =========================
+       GENERAL
+    ========================= */
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    section {
+      padding: 120px 0;
+    }
+
+    .kicker {
+      color: #19c8e8;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      letter-spacing: 0.25em;
+    }
+
+    h2 {
+      margin-top: 12px;
+
+      font-size: clamp(38px, 6vw, 70px);
+
+      line-height: 0.95;
+
+      letter-spacing: -0.05em;
+    }
+
+    .muted {
+      color: #9ca6b2;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding-top: 120px;
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      right: -250px;
+      top: 100px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(25,200,232,0.08),
+          transparent 70%
+        );
     }
 
     .hero-content {
-        padding: 80px 20px 50px;
+      position: relative;
+      z-index: 2;
+
+      max-width: 850px;
     }
 
-    .hero-image {
-        height: 45vh;
-        margin-bottom: 18px;
+    .hero-label {
+      color: #19c8e8;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 0.3em;
+
+      margin-bottom: 22px;
     }
 
-    .hero-eyebrow {
-        font-size: 12px;
-        letter-spacing: 3px;
-    }
+    .hero h1 {
+      font-size: clamp(58px, 10vw, 115px);
 
-    .hero-text h1 {
-        font-size: clamp(40px, 11vw, 62px);
+      line-height: 0.86;
 
-        letter-spacing: -2.5px;
+      letter-spacing: -0.07em;
+
+      font-weight: 900;
     }
 
     .hero-subtitle {
-        font-size: 10px;
-        letter-spacing: 2px;
+      margin-top: 28px;
+
+      font-size: 13px;
+
+      letter-spacing: 0.2em;
+
+      color: #c8ced5;
+
+      font-weight: 700;
     }
 
-    .hero-price {
-        font-size: 24px;
+    .price {
+      margin-top: 24px;
+
+      font-size: 23px;
+
+      font-weight: 900;
     }
 
-    .hero-cta {
-        padding: 15px 35px;
+    .price span {
+      font-size: 10px;
+
+      color: #8e98a4;
+
+      margin-left: 7px;
+
+      letter-spacing: 0.15em;
     }
 
+    .cta {
+      margin-top: 30px;
 
-    .section-inner {
-        width: 88%;
+      padding: 16px 25px;
+
+      background: #ffffff;
+      color: #000000;
+
+      border: none;
+
+      font-size: 11px;
+      font-weight: 900;
+
+      letter-spacing: 0.15em;
     }
 
-    .section-label {
-        font-size: 12px;
-        letter-spacing: 2.5px;
+    /* =========================
+       EDITION
+    ========================= */
+
+    .edition {
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    .section-title {
-        font-size: clamp(40px, 12vw, 58px);
+    .edition-grid {
+      margin-top: 60px;
 
-        letter-spacing: -2.5px;
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
     }
 
+    .edition-word {
+      font-size: clamp(55px, 9vw, 110px);
 
-    #edition,
-    #jersey,
-    #size-fit,
-    #pre-order,
-    #order-form {
-        padding: 85px 0;
+      font-weight: 900;
+
+      letter-spacing: -0.07em;
+
+      line-height: 0.85;
     }
 
-    .edition-description {
-        font-size: 17px;
+    .edition-copy {
+      max-width: 450px;
     }
 
+    .edition-copy h3 {
+      font-size: 25px;
 
-    /* JERSEY CAROUSEL MOBILE */
-
-    .jersey-set {
-        margin-bottom: 65px;
+      margin-bottom: 20px;
     }
 
-    .jersey-set-title {
-        font-size: 24px;
+    .edition-copy p {
+      color: #9ca6b2;
+
+      line-height: 1.7;
+
+      font-size: 14px;
     }
 
-    .jersey-slide {
-        flex: 0 0 88%;
-        min-height: 430px;
+    /* =========================
+       JERSEY GALLERY
+    ========================= */
+
+    .gallery-section {
+      margin-top: 65px;
     }
 
-    .jersey-placeholder {
-        height: 430px;
-        min-height: 430px;
+    .gallery-header {
+      display: flex;
+
+      justify-content: space-between;
+      align-items: end;
+
+      margin-bottom: 18px;
     }
 
-    .jersey-swipe-hint {
-        display: none;
+    .gallery-header h3 {
+      font-size: 20px;
+
+      letter-spacing: 0.08em;
     }
 
+    .gallery-header span {
+      color: #89939f;
 
-    .preorder-price {
-        font-size: 80px;
+      font-size: 10px;
+
+      letter-spacing: 0.15em;
     }
 
+    .gallery {
+      display: flex;
 
-    .order-form-grid {
-        grid-template-columns: 1fr;
-        gap: 22px;
+      gap: 15px;
+
+      overflow-x: auto;
+
+      scroll-snap-type: x mandatory;
+
+      scrollbar-width: none;
     }
 
-    .form-group.full {
-        grid-column: auto;
+    .gallery::-webkit-scrollbar {
+      display: none;
     }
 
-    .custom-fields {
-        grid-column: auto;
+    .gallery-card {
+      flex: 0 0 min(78vw, 430px);
 
-        grid-template-columns: 1fr;
+      aspect-ratio: 4 / 5;
 
-        padding: 20px;
+      background: #0c121a;
+
+      border: 1px solid rgba(255,255,255,0.1);
+
+      scroll-snap-align: start;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      color: #66717e;
+
+      text-align: center;
     }
 
-    .form-group label {
-        font-size: 12px;
+    .gallery-card strong {
+      display: block;
+
+      color: #d0d6dd;
+
+      margin-bottom: 8px;
+
+      font-size: 13px;
+
+      letter-spacing: 0.15em;
     }
 
-    .form-group input,
-    .form-group select {
-        min-height: 52px;
+    .gallery-controls {
+      display: flex;
 
-        font-size: 15px;
+      justify-content: flex-end;
+
+      gap: 8px;
+
+      margin-top: 12px;
     }
 
-    .order-summary {
-        padding: 25px 20px;
+    .arrow {
+      width: 40px;
+      height: 40px;
+
+      background: transparent;
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      color: white;
     }
 
-    .payment-box {
-        padding: 25px 20px;
+    /* =========================
+       SIZE
+    ========================= */
+
+    .size-table-wrapper {
+      margin-top: 45px;
+
+      overflow-x: auto;
+
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
+    table {
+      width: 100%;
 
-    .menu-nav {
-        gap: 25px;
+      min-width: 500px;
+
+      border-collapse: collapse;
     }
 
-    .menu-nav a {
-        font-size: 22px;
+    th,
+    td {
+      padding: 15px;
+
+      text-align: left;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .menu-close {
-        top: 20px;
-        right: 20px;
+    th {
+      font-size: 10px;
+
+      color: #8e98a4;
+
+      letter-spacing: 0.15em;
     }
 
-}
-
-</style>
-</head>
-
-
-<body>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<section id="hero">
-
-    <header class="hero-header">
-
-        <div class="logo">
-            INTC
-        </div>
-
-        <button
-            class="menu-button"
-            id="menuButton"
-            aria-label="Open menu"
-        >
-            ☰
-        </button>
-
-    </header>
-
-
-    <div class="hero-content">
-
-        <div class="hero-image">
-
-            <img
-                src="assets/hero-model.jpg"
-                alt="INTC The First Elite Edition"
-                onerror="this.style.display='none';"
-            >
-
-        </div>
-
-
-        <div class="hero-text">
-
-            <p class="hero-eyebrow">
-                THE FIRST
-            </p>
-
-            <h1>
-                ELITE EDITION
-            </h1>
-
-            <p class="hero-subtitle">
-                LUXURY ELITE FOOTBALL JERSEY
-            </p>
-
-            <div class="hero-price">
-                ฿459
-            </div>
-
-            <a
-                href="#pre-order"
-                class="hero-cta"
-            >
-                PRE-ORDER
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     MENU
-===================================================== -->
-
-<div
-    class="menu-overlay"
-    id="menuOverlay"
->
-
-    <button
-        class="menu-close"
-        id="menuClose"
-        aria-label="Close menu"
-    >
-        ×
-    </button>
-
-    <nav class="menu-nav">
-
-        <a href="#edition">THE EDITION</a>
-
-        <a href="#jersey">THE JERSEY</a>
-
-        <a href="#size-fit">SIZE & FIT</a>
-
-        <a href="#pre-order">PRE-ORDER</a>
-
-        <a href="#order-form">ORDER</a>
-
-    </nav>
-
-</div>
-
-
-
-<!-- =====================================================
-     THE EDITION
-===================================================== -->
-
-<section id="edition">
-
-    <div class="section-inner">
-
-        <div class="edition-content">
-
-            <p class="section-label">
-                THE EDITION
-            </p>
-
-            <h2 class="section-title">
-                THE FIRST<br>
-                ELITE EDITION
-            </h2>
-
-            <div class="edition-line"></div>
-
-            <p class="edition-description">
-                The first football jersey created exclusively
-                for International College. Designed with a
-                refined athletic identity and a luxury-focused
-                approach.
-            </p>
-
-            <p class="edition-statement">
-                FIRST OF ITS KIND
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     THE JERSEY
-===================================================== -->
-
-<section id="jersey">
-
-    <div class="section-inner">
-
-        <div class="jersey-header">
-
-            <p class="section-label">
-                03 — THE JERSEY
-            </p>
-
-            <h2 class="section-title">
-                THE JERSEY
-            </h2>
-
-        </div>
-
-
-        <!-- =============================================
-             SET 01 — THE EDITORIAL
-        ============================================== -->
-
-        <div class="jersey-set">
-
-            <div class="jersey-set-header">
-
-                <span class="jersey-set-number">
-                    01
-                </span>
-
-                <h3 class="jersey-set-title">
-                    THE EDITORIAL
-                </h3>
-
-                <p class="jersey-set-subtitle">
-                    MODEL / LIFESTYLE
-                </p>
-
-            </div>
-
-
-            <div class="jersey-carousel">
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        MODEL IMAGE 01
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        MODEL IMAGE 02
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        MODEL IMAGE 03
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        MODEL IMAGE 04
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        MODEL IMAGE 05
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="jersey-counter">
-
-                <span class="jersey-counter-text">
-                    01 — 05
-                </span>
-
-                <span class="jersey-swipe-hint">
-                    SWIPE TO EXPLORE →
-                </span>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- =============================================
-             SET 02 — THE DETAILS
-        ============================================== -->
-
-        <div class="jersey-set">
-
-            <div class="jersey-set-header">
-
-                <span class="jersey-set-number">
-                    02
-                </span>
-
-                <h3 class="jersey-set-title">
-                    THE DETAILS
-                </h3>
-
-                <p class="jersey-set-subtitle">
-                    CRAFT / DETAILS
-                </p>
-
-            </div>
-
-
-            <div class="jersey-carousel">
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        DETAIL IMAGE 01
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        DETAIL IMAGE 02
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        DETAIL IMAGE 03
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        DETAIL IMAGE 04
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        DETAIL IMAGE 05
-                    </div>
-
-                </div>
-
-
-                <div class="jersey-slide">
-
-                    <div class="jersey-placeholder">
-                        DETAIL IMAGE 06
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="jersey-counter">
-
-                <span class="jersey-counter-text">
-                    01 — 06
-                </span>
-
-                <span class="jersey-swipe-hint">
-                    SWIPE TO EXPLORE →
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     SIZE & FIT
-===================================================== -->
-
-<section id="size-fit">
-
-    <div class="section-inner">
-
-        <div class="size-header">
-
-            <p class="section-label">
-                04 — SIZE & FIT
-            </p>
-
-            <h2 class="section-title">
-                SIZE & FIT
-            </h2>
-
-        </div>
-
-
-        <div class="size-table-wrap">
-
-            <table class="size-table">
-
-                <thead>
-
-                    <tr>
-                        <th>SIZE</th>
-                        <th>CHEST</th>
-                        <th>LENGTH</th>
-                    </tr>
-
-                </thead>
-
-
-                <tbody>
-
-                    <tr><td>JS</td><td>28"</td><td>22"</td></tr>
-                    <tr><td>JM</td><td>30"</td><td>23"</td></tr>
-                    <tr><td>JL</td><td>32"</td><td>24"</td></tr>
-                    <tr><td>SS</td><td>34"</td><td>25.5"</td></tr>
-                    <tr><td>S</td><td>36"</td><td>26"</td></tr>
-                    <tr><td>M</td><td>38"</td><td>27"</td></tr>
-                    <tr><td>L</td><td>40"</td><td>28"</td></tr>
-                    <tr><td>XL</td><td>42"</td><td>29"</td></tr>
-                    <tr><td>2XL</td><td>44"</td><td>30"</td></tr>
-                    <tr><td>3XL</td><td>46"</td><td>31"</td></tr>
-                    <tr><td>4XL</td><td>48"</td><td>32"</td></tr>
-                    <tr><td>5XL</td><td>50"</td><td>33"</td></tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-
-        <p class="size-note">
-            Measurements may vary by approximately ±1 inch.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     PRE-ORDER
-===================================================== -->
-
-<section id="pre-order">
-
-    <div class="section-inner">
-
-        <div class="preorder-box">
-
-            <p class="section-label">
-                05 — PRE-ORDER
-            </p>
-
-            <h2 class="section-title">
-                RESERVE<br>
-                YOUR EDITION
-            </h2>
-
-            <div class="preorder-price">
-                ฿459
-            </div>
-
-
-            <a
-                href="#order-form"
-                class="preorder-button"
-            >
-                ORDER NOW
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     ORDER FORM
-===================================================== -->
-
-<section id="order-form">
-
-    <div class="section-inner">
-
-        <div class="order-container">
-
-            <div class="order-header">
-
-                <p class="section-label">
-                    06 — ORDER
-                </p>
-
-                <h2 class="section-title">
-                    PLACE YOUR<br>
-                    ORDER
-                </h2>
-
-            </div>
-
-
-            <form id="orderForm">
-
-                <div class="order-form-grid">
-
-
-                    <!-- FULL NAME -->
-
-                    <div class="form-group full">
-
-                        <label for="fullName">
-                            FULL NAME
-                        </label>
-
-                        <input
-                            type="text"
-                            id="fullName"
-                            name="fullName"
-                            placeholder="ENTER FULL NAME"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- PHONE -->
-
-                    <div class="form-group">
-
-                        <label for="phone">
-                            PHONE
-                        </label>
-
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="ENTER PHONE NUMBER"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- LINE -->
-
-                    <div class="form-group">
-
-                        <label for="lineId">
-                            LINE ID / MAIN CONTACT
-                        </label>
-
-                        <input
-                            type="text"
-                            id="lineId"
-                            name="lineId"
-                            placeholder="ENTER LINE ID"
-                            required
-                        >
-
-                    </div>
-
-
-                    <!-- SLEEVE -->
-
-                    <div class="form-group">
-
-                        <label for="sleeve">
-                            SLEEVE
-                        </label>
-
-                        <select
-                            id="sleeve"
-                            required
-                        >
-
-                            <option value="">
-                                SELECT SLEEVE
-                            </option>
-
-                            <option value="SHORT SLEEVE">
-                                SHORT SLEEVE
-                            </option>
-
-                            <option value="LONG SLEEVE">
-                                LONG SLEEVE
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- SIZE -->
-
-                    <div class="form-group">
-
-                        <label for="size">
-                            SIZE
-                        </label>
-
-                        <select
-                            id="size"
-                            required
-                        >
-
-                            <option value="">
-                                SELECT SIZE
-                            </option>
-
-                            <option value="JS">JS</option>
-                            <option value="JM">JM</option>
-                            <option value="JL">JL</option>
-                            <option value="SS">SS</option>
-                            <option value="S">S</option>
-                            <option value="M">M</option>
-                            <option value="L">L</option>
-                            <option value="XL">XL</option>
-                            <option value="2XL">2XL</option>
-                            <option value="3XL">3XL (+฿20)</option>
-                            <option value="4XL">4XL (+฿20)</option>
-                            <option value="5XL">5XL (+฿20)</option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- CUSTOMIZATION -->
-
-                    <div class="form-group full">
-
-                        <label for="customization">
-                            NAME & NUMBER
-                        </label>
-
-                        <select id="customization">
-
-                            <option value="none">
-                                NO CUSTOMIZATION
-                            </option>
-
-                            <option value="add">
-                                ADD NAME & NUMBER
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <!-- CUSTOM FIELDS -->
-
-                    <div
-                        id="customFields"
-                        class="custom-fields"
-                        style="display:none;"
-                    >
-
-                        <div class="form-group">
-
-                            <label for="playerName">
-                                PLAYER NAME
-                            </label>
-
-                            <input
-                                type="text"
-                                id="playerName"
-                                placeholder="ENTER NAME"
-                                maxlength="12"
-                            >
-
-                        </div>
-
-
-                        <div class="form-group">
-
-                            <label for="playerNumber">
-                                PLAYER NUMBER
-                            </label>
-
-                            <input
-                                type="number"
-                                id="playerNumber"
-                                placeholder="ENTER NUMBER"
-                                min="0"
-                                max="99"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- QUANTITY -->
-
-                    <div class="form-group">
-
-                        <label for="quantity">
-                            QUANTITY
-                        </label>
-
-                        <input
-                            type="number"
-                            id="quantity"
-                            value="1"
-                            min="1"
-                            max="20"
-                            required
-                        >
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- ORDER SUMMARY -->
-
-                <div class="order-summary">
-
-                    <h3>
-                        ORDER SUMMARY
-                    </h3>
-
-
-                    <div class="summary-row">
-
-                        <span>
-                            ITEMS
-                        </span>
-
-                        <span id="summaryItems">
-                            1 JERSEY
-                        </span>
-
-                    </div>
-
-
-                    <div class="summary-row">
-
-                        <span>
-                            SLEEVE
-                        </span>
-
-                        <span id="summarySleeve">
-                            —
-                        </span>
-
-                    </div>
-
-
-                    <div class="summary-row">
-
-                        <span>
-                            SIZE
-                        </span>
-
-                        <span id="summarySize">
-                            —
-                        </span>
-
-                    </div>
-
-
-                    <div class="summary-row">
-
-                        <span>
-                            NAME & NUMBER
-                        </span>
-
-                        <span id="summaryCustomization">
-                            NO
-                        </span>
-
-                    </div>
-
-
-                    <div class="summary-total">
-
-                        <span>
-                            TOTAL
-                        </span>
-
-                        <span id="summaryTotal">
-                            ฿459
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- PAYMENT -->
-
-                <div class="payment-box">
-
-                    <h3>
-                        PAYMENT
-                    </h3>
-
-
-                    <div class="qr-placeholder">
-
-                        PROMPTPAY QR<br>
-                        ADD YOUR QR IMAGE HERE
-
-                    </div>
-
-
-                    <div class="slip-upload">
-
-                        <div class="form-group">
-
-                            <label for="paymentSlip">
-                                UPLOAD PAYMENT SLIP
-                            </label>
-
-                            <input
-                                type="file"
-                                id="paymentSlip"
-                                accept="image/*"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="confirm-button"
-                    >
-                        CONFIRM ORDER
-                    </button>
-
-                </div>
-
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
-<footer>
-
-    <div class="footer-logo">
-        INTC
-    </div>
-
-    <div class="footer-college">
-        INTERNATIONAL COLLEGE
-    </div>
-
-    <div class="footer-edition">
-        THE FIRST ELITE EDITION
-    </div>
-
-</footer>
-
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-
-/* =====================================================
-   MENU
-===================================================== */
-
-const menuButton =
-    document.getElementById("menuButton");
-
-const menuOverlay =
-    document.getElementById("menuOverlay");
-
-const menuClose =
-    document.getElementById("menuClose");
-
-const menuLinks =
-    document.querySelectorAll(".menu-nav a");
-
-
-menuButton.addEventListener("click", function() {
-
-    menuOverlay.classList.add("active");
-
-});
-
-
-menuClose.addEventListener("click", function() {
-
-    menuOverlay.classList.remove("active");
-
-});
-
-
-menuLinks.forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        menuOverlay.classList.remove("active");
-
-    });
-
-});
-
-
-
-/* =====================================================
-   NAME & NUMBER
-===================================================== */
-
-const customization =
-    document.getElementById("customization");
-
-const customFields =
-    document.getElementById("customFields");
-
-const playerName =
-    document.getElementById("playerName");
-
-const playerNumber =
-    document.getElementById("playerNumber");
-
-
-customization.addEventListener("change", function() {
-
-    if (this.value === "add") {
-
-        customFields.style.display = "grid";
-
-        playerName.required = true;
-        playerNumber.required = true;
-
-    } else {
-
-        customFields.style.display = "none";
-
-        playerName.required = false;
-        playerNumber.required = false;
-
-        playerName.value = "";
-        playerNumber.value = "";
-
+    td {
+      font-size: 13px;
     }
 
-    updateSummary();
+    /* =========================
+       BUILD
+    ========================= */
 
-});
+    .build {
+      background: #080c12;
 
-
-
-/* =====================================================
-   ORDER SUMMARY
-===================================================== */
-
-const sleeve =
-    document.getElementById("sleeve");
-
-const size =
-    document.getElementById("size");
-
-const quantity =
-    document.getElementById("quantity");
-
-const summaryItems =
-    document.getElementById("summaryItems");
-
-const summarySleeve =
-    document.getElementById("summarySleeve");
-
-const summarySize =
-    document.getElementById("summarySize");
-
-const summaryCustomization =
-    document.getElementById("summaryCustomization");
-
-const summaryTotal =
-    document.getElementById("summaryTotal");
-
-
-function updateSummary() {
-
-    const qty =
-        parseInt(quantity.value) || 1;
-
-    let unitPrice = 459;
-
-
-    if (
-        size.value === "3XL" ||
-        size.value === "4XL" ||
-        size.value === "5XL"
-    ) {
-
-        unitPrice += 20;
-
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
+    .form-grid {
+      margin-top: 45px;
 
-    const total =
-        qty * unitPrice;
+      display: grid;
 
+      grid-template-columns: 1fr 1fr;
 
-    summaryItems.textContent =
-        qty + " JERSEY";
-
-
-    summarySleeve.textContent =
-        sleeve.value || "—";
-
-
-    summarySize.textContent =
-        size.value || "—";
-
-
-    if (customization.value === "add") {
-
-        if (playerName.value && playerNumber.value) {
-
-            summaryCustomization.textContent =
-                playerName.value.toUpperCase()
-                + " / #"
-                + playerNumber.value;
-
-        } else {
-
-            summaryCustomization.textContent =
-                "PENDING";
-
-        }
-
-    } else {
-
-        summaryCustomization.textContent =
-            "NO";
-
+      gap: 18px;
     }
 
+    .field {
+      background: #0c121a;
 
-    summaryTotal.textContent =
-        "฿" + total.toLocaleString("en-US");
+      border: 1px solid rgba(255,255,255,0.1);
 
-}
-
-
-sleeve.addEventListener(
-    "change",
-    updateSummary
-);
-
-size.addEventListener(
-    "change",
-    updateSummary
-);
-
-quantity.addEventListener(
-    "input",
-    updateSummary
-);
-
-playerName.addEventListener(
-    "input",
-    updateSummary
-);
-
-playerNumber.addEventListener(
-    "input",
-    updateSummary
-);
-
-
-
-/* =====================================================
-   FORM — TEMPORARY FRONTEND ONLY
-   GOOGLE SHEETS / APPS SCRIPT REMOVED FOR NOW
-===================================================== */
-
-const orderForm =
-    document.getElementById("orderForm");
-
-
-orderForm.addEventListener(
-    "submit",
-    function(event) {
-
-        event.preventDefault();
-
-        alert(
-            "ORDER FORM READY\n\n" +
-            "Your order details have been prepared.\n\n" +
-            "Online submission will be connected later."
-        );
-
+      padding: 20px;
     }
-);
 
+    .field.full {
+      grid-column: 1 / -1;
+    }
 
-updateSummary();
+    .field label {
+      display: block;
 
-</script>
+      color: #8e98a4;
 
+      font-size: 10px;
 
-</body>
-</html>
+      font-weight: 800;
+
+      letter-spacing: 0.18em;
+
+      margin-bottom: 12px;
+    }
+
+    .choices {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .choice {
+      padding: 12px 16px;
+
+      background: transparent;
+
+      color: white;
+
+      border: 1px solid rgba(255,255,255,0.12);
+
+      font-size: 11px;
+
+      font-weight: 800;
+    }
+
+    .choice.active {
+      border-color: #19c8e8;
+
+      color: #19c8e8;
+    }
+
+    select,
+    input {
+      width: 100%;
+
+      padding: 4px 0;
+
+      background: transparent;
+
+      border: none;
+
+      outline: none;
+
+      color: white;
+    }
+
+    select option {
+      background: #111820;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .add-cart {
+      width: 100%;
+
+      margin-top: 18px;
+
+      padding: 17px;
+
+      background: white;
+
+      color: black;
+
+      border: none;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 0.15em;
+    }
+
+    /* =========================
+       CART
+    ========================= */
+
+    .cart {
+      margin-top: 55px;
+    }
+
+    .cart-item {
+      display: grid;
+
+      grid-template-columns: 1fr auto;
+
+      gap: 20px;
+
+      padding: 20px 0;
+
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .cart-title {
+      font-weight: 900;
+    }
+
+    .cart-meta {
+      margin-top: 7px;
+
+      color: #89939f;
+
+      font-size: 11px;
+
+      line-height: 1.7;
+    }
+
+    .cart-actions button {
+      background: transparent;
+
+      border: none;
+
+      color: white;
+
+      font-size: 10px;
+
+      letter-spacing: 0.1em;
+
+      margin-left: 10px;
+    }
+
+    .cart-total {
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 25px 0;
+
+      font-size: 21px;
+
+      font-weight: 900;
+    }
+
+    /* =========================
+       CUSTOMER
+    ========================= */
+
+    .customer {
+      max-width: 760px;
+    }
+
+    /* =========================
+       REVIEW
+    ========
